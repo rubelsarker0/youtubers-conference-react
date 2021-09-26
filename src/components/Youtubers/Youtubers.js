@@ -1,32 +1,35 @@
 import React, { useEffect, useState } from 'react';
 import Cart from '../Cart/Cart';
-import Youtuber from '../Youtuber/Youtuber';
-import './Youtubers.css';
+import YouTuber from '../YouTuber/YouTuber';
+import './YouTubers.css';
 
-const Youtubers = () => {
-	const [youtubers, setYoutubers] = useState([]);
+const YouTubers = () => {
+	// youTuber and cartItem state declaration
+	const [youTubers, setYouTubers] = useState([]);
 	const [cartItems, setCartItems] = useState([]);
 
+	// Loading youTuber data
 	useEffect(() => {
-		fetch(`./youtubers.json`)
+		fetch(`./youTubers.json`)
 			.then((response) => response.json())
-			.then((data) => setYoutubers(data));
+			.then((data) => setYouTubers(data));
 	}, []);
 
-	const addToCartHandler = (newYoutuber) => {
-		setCartItems([...cartItems, newYoutuber]);
+	// Handling add to cart btn
+	const addToCartHandler = (newYouTuber) => {
+		setCartItems([...cartItems, newYouTuber]);
 	};
 	return (
 		<div className="container my-2">
 			<div className="row row-cols-1 row-cols-md-3 row-cols-lg-3 text-black">
 				<div className="col-9">
 					<div className="row row-cols-1 row cols-md-3 row-cols-lg-3 g-4">
-						{youtubers.map((youtuber) => (
-							<Youtuber
-								key={youtuber.id}
-								youtuber={youtuber}
+						{youTubers.map((youTuber) => (
+							<YouTuber
+								key={youTuber.id}
+								youTuber={youTuber}
 								addToCartHandler={addToCartHandler}
-							></Youtuber>
+							></YouTuber>
 						))}
 					</div>
 				</div>
@@ -38,4 +41,4 @@ const Youtubers = () => {
 	);
 };
 
-export default Youtubers;
+export default YouTubers;

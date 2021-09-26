@@ -1,12 +1,12 @@
 import './App.css';
 import Header from './components/Header/Header';
-import Youtubers from './components/Youtubers/Youtubers';
+import YouTubers from './components/YouTubers/YouTubers';
 
 function App() {
 	return (
 		<div className="App">
 			<Header />
-			<Youtubers />
+			<YouTubers />
 		</div>
 	);
 }

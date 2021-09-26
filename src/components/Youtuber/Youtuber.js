@@ -1,32 +1,30 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 import React from 'react';
-import './Youtuber.css';
+import './YouTuber.css';
 
-const Youtuber = (props) => {
-	// console.log(props.youtuber);
+const YouTuber = (props) => {
+	// getting all the files from youTuber object using destructuring
 	const {
-		youtuberImg,
-		youtuberName,
+		youTuberImg,
+		youTuberName,
 		channelName,
-		channelDesc,
 		contentType,
 		createdDate,
 		subscriber,
 		monthlyIncome,
-	} = props.youtuber;
+	} = props.youTuber;
 
 	return (
 		<div className="col">
 			<div className="card border-success border-bottom border-3 border-0 h-100 mb-2">
 				<img
-					src={youtuberImg}
+					src={youTuberImg}
 					className="img-fluid card-img text-centre mx-auto my-3"
-					alt="youtuber-img"
+					alt="youTuber-img"
 				/>
 				<div className="card-body">
-					<h5 className="card-title">{youtuberName}</h5>
-					{/* <p className="channel-description">{channelDesc.slice(0, 200)}</p> */}
+					<h5 className="card-title">{youTuberName}</h5>
 					<ul>
 						<li>Channel: {channelName}</li>
 						<li>Content Type: {contentType}</li>
@@ -38,7 +36,7 @@ const Youtuber = (props) => {
 				<div className="card-footer text-center">
 					<button
 						className="btn btn-success add-to-cart mx-auto"
-						onClick={() => props.addToCartHandler(props.youtuber)}
+						onClick={() => props.addToCartHandler(props.youTuber)}
 					>
 						<FontAwesomeIcon icon={faShoppingCart} />
 						<span className="ms-2">ADD TO CART</span>
@@ -49,4 +47,4 @@ const Youtuber = (props) => {
 	);
 };
 
-export default Youtuber;
+export default YouTuber;
