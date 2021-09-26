@@ -30,7 +30,7 @@ const YouTuber = (props) => {
 						<li>Content Type: {contentType}</li>
 						<li>Created: {createdDate}</li>
 						<li>Subscriber: {subscriber}</li>
-						<li>Income: {monthlyIncome}</li>
+						<li>Income: ${monthlyIncome}</li>
 					</ul>
 				</div>
 				<div className="card-footer text-center">
